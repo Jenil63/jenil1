@@ -217,7 +217,7 @@
                     flex-direction: column;
                     position: fixed;
                     top: 0;
-                    right: 0;
+                    right:-300px;
                     min-height: 100vh;
                     background: cadetblue;
                     width: 200px;
@@ -228,16 +228,16 @@
                         font-size: 30px;
                         margin: 30px 0px;
                     }
+                    
+                    #menu{
+                        display:block;
+                    }
                     #cros{
                         display: block;
                         position: relative;
                         top: 0px;
                         right: 38%;
                     }
-                    #menu{
-                        display:block;
-                    }
-
                     .product{
                         display: grid;
                         grid-template-columns: repeat(2, 150px);
@@ -357,13 +357,13 @@
        let menu = document.getElementById('menu');
        let navbar = document.querySelector('.navbar');
 
-       cros.addEventListener('click',function(){
-            navbar.style.right="-300px";
-       })
        menu.addEventListener('click',function(){
         navbar.style.right="0px";
        })
-
+       
+       cros.addEventListener('click',function(){
+            navbar.style.right="-300px";
+       })
        
     </script>
 </body>
