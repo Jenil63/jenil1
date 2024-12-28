@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .Container{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            position: sticky;
+            top:0;
+            box-shadow:3px 2px 2px 2px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+            background: cadetblue;
+            color:white;
+            padding: 10px 24px;
+        }
+        .Container h1{
+            font-size:50px;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul{
+            list-style: none;
+            padding:5px 15px;
+            align-items: center;
+        }
+        nav ul li{
+            display: inline-block;
+            font-size:30px;
+            border:1px solid blue;
+            padding:12px 20px;
+            margin:0px 15px;  
+            position: relative;
+            width:max-content;  
+            border-radius: 2px;
+        }
+        nav ul li::after{
+            content: '';
+            height:3px;
+            background: #fff;
+            position: absolute;
+            bottom:0;
+            left:0;
+            transition: 1s;
+        }
+        nav ul li:hover::after{
+            width:100%;
+        }
+        .Pro-con{
+        text-align: center;
+        min-height:100vh;
+        flex-wrap:wrap;
+        box-sizing: border-box;
+        }
+        .Pro-main{
+            border:1px solid blue;
+            width:90%;
+            margin:50px auto;
+            box-sizing: border-box;
+            background: cadetblue;
+        }
+        .product{
+            border:1px solid yellow;
+            box-sizing: border-box;
+            align-content: center;
+            display: flex;
+            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,300px));
+            gap:20px;
+            margin:10px 0px;
+        }
+        .Pro-main h1{
+            color:white;   
+        }
+        .box{
+            width:300px;
+            height:350px;
+            border-radius: 10px;
+            margin:15px 10px;
+            background:#ddd;
+            box-sizing: border-box;
+            transition: 1.5s;
+        }
+        .box:hover{
+            transform: translateY(-20px);
+            background: linear-gradient(50deg,cyan,lightpink,crimson);
+            box-shadow: 0px 8px 10px rgba(0,0,0,0.4);
+        }
+        .box img{
+            aspect-ratio: 2/2;
+            object-fit: cover;
+            width:250px;
+            height:300px;
+            margin-top: 3px;
+            border-radius:5px;
+        }
+        .box i{
+            color:chocolate;
+        }
+        .box p{
+            color:crimson;
+            font-weight:600;
+        }
+        #menu{
+            display: none;
+        }
+        #cros{
+            width:30px;
+            height:30px;
+            display:none;
+        }
+        @media(max-width:1050px){
+            .product {
+                display: grid;
+                grid-template-columns: repeat(3,285px);
+                grid-gap: 5px;
+            }
+            .box {
+                width: 260px;
+                height: 300px;
+            }
+            .box img {
+                    width: 220px;
+                    height: 250px;
+                }
+        }
+        @media(max-width:960px){
+            .box{
+                width:200px;
+                height:250px;
+            }
+            .box img{
+                width:180px;
+                height:200px;
+            }
+            .product{
+                display:grid;
+                grid-template-columns: repeat(3,240px);
+                grid-gap:5px;
+            }
+
+        }
+        @media(max-width:832px){
+            ul.navbar {
+            padding: 5px 5px;
+        }
+        nav ul li {
+            font-size: 25px;
+            margin: 0px 10px;
+        }
+        .box{
+            width:160px;
+            height:200px;
+        }
+        .box img{
+            width:145px;
+            height:150px;
+        }
+        .product{
+            display:grid;
+            grid-template-columns: repeat(3,190px);
+        }
+        }
+        @media(max-width:715px){
+            .Container h1 {
+                font-size: 40px;
+            }
+            ul.navbar {
+            padding: 5px 0px;
+            }
+            nav ul li {
+                    font-size: 20px;
+                    margin: 0px 8px;
+                }
+        }
+        @media(max-width:630px){
+            .product{
+                display:grid;
+                grid-template-columns: repeat(3,140px);
+            }
+            .box{
+                width:120px;
+                height:160px;
+            }
+            .box img{
+                width:110px;
+                height:115px;
+            }
+            .box p {
+                font-size: 15px;
+            }
+            .box i {
+                font-size: 13px;
+            }
+            nav ul li {
+                    font-size: 15px;
+                    margin: 0px 2px;
+                }
+        }
+        @media(max-width:500px){
+            .navbar {
+                    display: flex;
+                    flex-direction: column;
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    min-height: 100vh;
+                    background: cadetblue;
+                    width: 200px;
+                    transition: 1s;
+                    box-shadow: 2px 5px 10px 5px rgba(0,0,0,0.4);
+                }
+                nav ul li {
+                        font-size: 30px;
+                        margin: 30px 0px;
+                    }
+                    #cros{
+                        display: block;
+                        position: relative;
+                        top: 0px;
+                        right: 38%;
+                    }
+                    #menu{
+                        display:block;
+                    }
+
+                    .product{
+                        display: grid;
+                        grid-template-columns: repeat(2, 150px);
+                        justify-content: center;
+                    }
+
+        }
+        @media(max-width:330px){
+            .box{
+                width:100px;
+                height:140px;
+            }
+            .box img{
+                width:90px;
+                height:95px;
+            }
+            .product{
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(2,130px);
+            }
+        }
+
+           
+    </style>
+</head>
+<body>
+        <div class="Container">
+            <h1>Pro</h1>
+            <nav>
+                <ul class="navbar">
+                    <img src="x-button-removebg-preview.png" id="cros">
+                    <li>Home</li>
+                    <li>Product</li>
+                    <li>About</li>
+                    <li>Contact Us</li>
+                </ul>
+                <img src="main-menu.png" id="menu" style="width:40px;height:40px;">
+               
+            </nav>
+           
+        </div>
+         <!-- products  -->
+        <div class="Pro-con">
+            <div class="Pro-main">
+             <h1>Products</h1>
+                <div class="product">
+                    <div class="box">
+                        <img src="profile.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo1.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo2.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo3.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo4.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo5.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <div class="box">
+                        <img src="photo6.png">
+                        <p>Price:100$</p>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+    <script>
+       let cros = document.getElementById('cros');
+       let menu = document.getElementById('menu');
+       let navbar = document.querySelector('.navbar');
+
+       cros.addEventListener('click',function(){
+            navbar.style.right="-300px";
+       })
+       menu.addEventListener('click',function(){
+        navbar.style.right="0px";
+       })
+
+       
+    </script>
+</body>
+</html>
