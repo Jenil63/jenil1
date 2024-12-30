@@ -72,6 +72,7 @@
             display: flex;
             justify-content: center;
             background: cadetblue;
+            border:1px solid red;
         }
         .big-img{
             margin:0px 5px;
@@ -81,11 +82,13 @@
         }
         .Img-holder{
             justify-content: center;
+            border:1px solid yellow
         }
         .small-img-holder{
             display: flex;
             width: 100%;
             justify-content: center;
+            border:1px solid green;
             
         }
         .small-img-holder .small-img{
@@ -103,11 +106,13 @@
             margin:5px 3%;
             width:40%;
             text-align: center;
-            line-height:60px
+            line-height:60px;
+            border:1px solid purple;
+            overflow: auto;
         }
         .p1{
             position: relative;
-            right:41%;
+            right:39%;
             font-weight: 500;
             font-size:23px;
             color:gainsboro;
@@ -116,10 +121,11 @@
         .p-details{
             min-height:700px;
             color:white;
+            border:1px solid blue;
         }
         .p-details h1,h2,select{
             position: relative;
-            right:30%;
+            right:25%;
         }
         .select{
             padding:5px 30px;
@@ -139,6 +145,7 @@
             color:white;
             font-size:25px;
             margin:20px 0px;
+            overflow: auto;
         }
         .add input{
             width:40px;
@@ -171,8 +178,176 @@
         }
         .add{
             position: relative;
-            right:32%;
+            right:28%;
         }
+        @media(max-width:1260px){
+            .p1 {
+                position: relative;
+                right: 30%;
+                font-weight: 500;
+                font-size: 23px;
+                color: gainsboro;
+                margin: 10px 0px;
+            }
+            .p-details {
+                min-height: 560px;
+                color: white;
+                border: 1px solid blue;
+            }
+            .p-details h1, h2, select {
+                position: relative;
+                right: 12%;
+            }
+            .add {
+                position: relative;
+                right: 12%;
+            }
+            .p2 {
+                border: 1px solid;
+                position: relative;
+                left: 1%;
+                line-height: 28px;
+                width: 97%;
+                color: white;
+                font-size: 20px;
+                margin: 12px 0px;
+                overflow: auto;
+            }
+        }
+        @media(max-width:1075px){
+            .big-img img {
+                width: 515px;
+            }
+            .small-img-holder .small-img {
+                aspect-ratio: 3/3;
+                object-fit: cover;
+                width: 90px;
+                height: 109px;
+                margin: 0px 5px;
+                border-radius: 3px;
+            }
+            .small-img-holder {
+                display: flex;
+                width: 94%;
+                justify-content: center;
+                border: 1px solid green;
+            }
+        }
+        @media(max-width:995px){
+            .p1 {
+                position: relative;
+                right: 25px;
+            }
+            .p-details h1, h2, select {
+                position: relative;
+                right: 5%;
+            }
+            .add {
+                position: relative;
+                right: 10%;
+            }
+            .p2 {
+                border: 1px solid;
+                position: relative;
+                left: 1%;
+                line-height: 17px;
+                width: 97%;
+                color: white;
+                font-size: 15px;
+                margin: 12px 0px;
+                overflow: auto;
+            }
+            .big-img img {
+                width: 464px;
+            }
+            .small-img-holder .small-img {
+                aspect-ratio: 3/3;
+                object-fit: cover;
+                width: 76px;
+                height: 96px;
+                margin: 0px 5px;
+                border-radius: 3px;
+            }
+        }
+        @media(max-width:875px){
+            .details {
+                display: grid;
+                grid-template-columns: repeat(1,262px);
+            }
+            .big-img img {
+                width: 410px;
+            }
+            .small-img-holder .small-img {
+                width: 65px;
+                height: 90px;
+            }
+        }
+        @media(max-width:826px){
+            nav ul {
+            padding: 5px 0px;
+            align-items: center;
+            }
+            nav ul li{
+                padding: 12px 10px;
+                margin: 0px 12px;
+            }
+            .p-details h1{
+                font-size:20px;
+            }
+            .p-details h2{
+                font-size:20px;
+            }
+            .add input{
+                width: 25px;
+                height: 25px;
+            }
+            .add button{
+                padding: 7px 5px;
+                font-size: 15px;
+            }
+            .big-img img {
+            width: 360px;
+            }
+            .small-img-holder .small-img {
+            width: 60px;
+            height: 86px;
+            }
+            .select {
+                padding: 5px 15px;
+                font-size: 23px;
+                }
+        }
+        @media(max-width:755px){
+            .p2{
+                line-height: 14px;
+                width: 90%;
+            }
+            .big-img img{
+            line-height: 14px;
+            width: 90%;
+            }
+            .small-img-holder .small-img {
+            width: 53px;
+            height: 72px;
+            }
+            .details {
+                line-height: 43px;
+            }
+        }
+    @media(max-width:700px){
+        nav ul li {
+            padding: 12px 0px;
+            margin: 0px 10px;
+            font-size: 27px;
+        }
+        .small-img-holder{
+            margin-left:10px;
+        }
+        .p2 {
+            line-height: 13px;
+            width: 80%;
+        }
+    }
     </style>
 </head>
     <body>
@@ -193,7 +368,7 @@
             <!-- product img part -->
             <div class="Img-holder">
                 <div class="big-img" id="big-img">
-                    <img src="photo1.png">
+                    <img id="img" src="photo1.png">
                 </div>
                     <div class="small-img-holder">
                         <img src="photo2.png " class="small-img">
@@ -221,23 +396,34 @@
                             <button type="submit">Add To Card</button>
                         </div>
                         <p class="p2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et 
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                            deserunt mollit anim id est laborum.
                         </p>
-                    
                     </div>
                 </div>
         </section>
     </body>
     <script>
-        const bigImgContainer = document.querySelector('.big-img img');
-        const smallImgs = document.querySelectorAll('.small-img');
+        let bigimg = document.getElementById('img');
+        let smallimg = document.getElementsByClassName('small-img');
 
-// Loop through each small image and add a click event listener
-        smallImgs.forEach((smallImg) => {
-        smallImg.addEventListener('click', () => {
-        // Set the src of the big image to the src of the clicked small image
-        bigImgContainer.src = smallImg.src;
-    });
-});
+        smallimg[0].onclick=function(){
+            bigimg.src = smallimg[0].src;
+        }
+        smallimg[1].onclick = function(){
+            bigimg.src = smallimg[1].src;
+        }
+        smallimg[2].onclick = function(){
+            bigimg.src = smallimg[2].src;
+        }
+        smallimg[3].onclick = function(){
+            bigimg.src = smallimg[3].src
+        }
+        smallimg[4].onclick=function(){
+            bigimg.src = smallimg[4].src
+        }
     </script>
     </html>
